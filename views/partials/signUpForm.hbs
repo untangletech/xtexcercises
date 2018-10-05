@@ -1,12 +1,16 @@
-<form class="form-signup" action="/submit" method="POST">
+<form class="form-signup" action="/signup" method="POST">
     <h2 class="form-signup-heading">Not still a member, then sign up</h2>
-    <label for="name" class="sr-only">Name</label>
-    <input type="text" id="name" class="form-control" placeholder="Name" required>
-    <label for="signupEmail" class="sr-only">Email address</label>
-    <input type="email" id="signupEmail" class="form-control" placeholder="Email address" required>
-    <label for="dob">Email address</label>
+    <div class="input-wrapper">
+        <input type="text" id="name" name="name" class="form-control" placeholder=" " required>
+        <label for="name" class="form-control-placeholder">Name</label>
+    </div>
+    <div class="input-wrapper">
+        <input type="email" id="signupEmail" name="email" class="form-control" placeholder=" " required>
+        <label for="signupEmail" class="form-control-placeholder">Email address</label>
+    </div>
+    <label for="dob">Date of birth</label>
     <div class="dob__wrapper js-dob__wrapper">
-        <select class="form-control date">
+        <select class="form-control date" name="date">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -39,7 +43,7 @@
             <option value="30" class="gt28">30</option>
             <option value="31" class="gt28 gt30">31</option>
         </select>
-        <select class="form-control month">
+        <select class="form-control month" name="month">
             <option value="1">Jan</option>
             <option value="2">Feb</option>
             <option value="3">Mar</option>
@@ -53,7 +57,7 @@
             <option value="11">Nov</option>
             <option value="12">Dec</option>
         </select>
-        <select class="form-control year">
+        <select class="form-control year" name="year">
             <option value="2012">2012</option>
             <option value="2011">2011</option>
             <option value="2010">2010</option>
@@ -90,10 +94,13 @@
 
         </select>
     </div>
-    <label for="signupPassword" class="sr-only">Password</label>
-    <input type="password" id="signupPassword" class="form-control" placeholder="Password" required>
-    <label for="confPassword" class="sr-only">Confirm Password</label>
-    <input type="password" id="confPassword" class="form-control" placeholder="Confirm Password" required>
-    <div class="g-recaptcha" data-sitekey="6LcOQ14UAAAAAL6iuD9p9Ot1B_ckzeuzRFZJV6ui"></div>
-    <button class="btn btn-lg btn-default btn-block" type="submit">Sign Up</button>
+    <div class="input-wrapper">
+        <input type="password" name="password" id="signupPassword" placeholder=" " class="form-control" required>
+        <label for="signupPassword" class="form-control-placeholder">Password</label>
+    </div>
+    <div class="input-wrapper">
+        <input type="password" name="confPassword" id="confPassword" placeholder=" " class="form-control" required>
+        <label for="confPassword" class="form-control-placeholder">Confirm Password</label>
+    </div>
+    <button class="btn btn-lg btn-default btn-block" name="submit" type="submit">Sign Up</button>
 </form>

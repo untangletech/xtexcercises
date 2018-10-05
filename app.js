@@ -5,11 +5,16 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var hbs = require('hbs');
 var fs = require('fs');
+
+var session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
 
+process.env.EMAIL_USER = encodeURIComponent("abhinavkaul95@gmail.com");
+process.env.EMAIL_PASS = "Suraj@0513";
+process.env.SMTP_SERVER = "smtp.gmail.com";
 /*  
  *  Section to register hbs partials according to the files 
  *  present under the directory structure /views/partials
@@ -36,6 +41,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({ secret: 'ssshhhhh' }));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 

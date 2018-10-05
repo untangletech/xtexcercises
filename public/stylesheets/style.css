@@ -33,13 +33,15 @@ header {
 }
 
 .forms-container input, .forms-container button, .g-recaptcha {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
-
-.g-recaptcha > div {
-  margin: 0 auto;
+.form-wrapper input {
+  margin-top: 30px;
 }
-
+.form-wrapper .checkbox input[type=checkbox] {
+  margin: 0;
+  left: 0;
+}
 .or-img-wrapper img {
   display: block;
   margin: 0 auto;
@@ -78,6 +80,32 @@ header {
 .dob__wrapper .month {
   width: 40%;
 }
-.error {
+.teaser {
   text-align: center;
+}
+
+.form-control-placeholder {
+  display: block;
+  position: absolute;
+  top: 0;
+  padding: 9px 0 0 13px;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+  opacity: 0.5;
+}
+
+.form-control:focus ~ .form-control-placeholder,
+.form-control:valid ~ .form-control-placeholder,
+.form-control:not(:placeholder-shown) ~ .form-control-placeholder {
+  -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+  padding: 5px 0;
+  opacity: 1;
+}
+
+.form-wrapper .input-wrapper {
+  position: relative;
+}
+label.error {
+  color:red;
 }
