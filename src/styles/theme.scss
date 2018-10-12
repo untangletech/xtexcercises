@@ -1,0 +1,9 @@
+$gray-base: #E5E5E5;
+$brand-primary: #428bca;
+
+body {
+    background-color: $gray-base;
+    p {
+        color: $brand-primary;
+    }
+}
