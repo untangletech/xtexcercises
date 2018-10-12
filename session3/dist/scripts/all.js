@@ -1,0 +1,1 @@
+alert("Testing changes");var sum=function(n,t){return n+t};console.log(sum(2,43));var x=myFunction(4,3);function myFunction(n,t){return n*t}
