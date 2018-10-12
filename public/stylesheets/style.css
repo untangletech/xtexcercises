@@ -62,22 +62,6 @@ header {
   display: inline-block;
   padding: 0 25px;
 }
-.dob__wrapper {
-  margin-bottom: 20px;
-}
-.dob__wrapper > select {
-  display: inline-block;
-  margin-right: 0.9%;
-}
-.dob__wrapper > select:last-child {
-  margin-right: 0;
-}
-.dob__wrapper .date, .dob__wrapper .year {
-  width: 28%;
-}
-.dob__wrapper .month {
-  width: 40%;
-}
 .error {
   text-align: center;
 }
