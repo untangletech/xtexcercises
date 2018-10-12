@@ -9,7 +9,7 @@ sequelize.authenticate()
         console.log("CONNECTED! ");
     })
     .catch(function (err) {
-        console.log("SOMETHING DONE GOOFED");
+        console.log("NOT ABLE TO CONNECT TO THE DATABASE");
     })
     .done();
 

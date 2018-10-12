@@ -6,15 +6,17 @@ var user = require('../models/user');
 
 var router = express.Router();
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', (req, res, next) => {
   var template = 'index', params = {};
   if (!!req.session) {
     var sess_email = req.session.email;
+    var sess_user_id = req.session.user_id;
     var errorMsg = req.session.errorMsg;
     var infoMsg = req.session.infoMsg;
     if (!!sess_email) {
       template = 'user/index';
       params['email'] = sess_email;
+      params['user_id'] = sess_user_id;
     }
     if (!!errorMsg) {
       params['errorMsg'] = errorMsg;
@@ -28,91 +30,101 @@ router.get('/', function (req, res, next) {
   res.render(template, params);
 });
 
-router.get('/test/:id', function (req, res, next) {
-  user.findById(req.params.id).then(function (users) {
-    res.json(users);
-  });
-});
-
-router.get('/logout', function (req, res, next) {
+router.get('/logout', (req, res, next) => {
   req.session.infoMsg = 'Logged out.';
-  req.session.destroy(function (err) {
+  req.session.destroy(err => {
     if (err) {
       console.log(err);
-    } else {
-      res.redirect('/');
     }
+    res.redirect('/');
+
   });
 });
 
-router.post('/signin', function (req, res) {
-  if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
+router.post('/signin', (req, res) => {
+  if (!req.body['g-recaptcha-response']) {
     req.session.errorMsg = 'Please select captcha';
     res.redirect("/");
-  }
-  var secretKey = "6LcOQ14UAAAAAFJSxIgpj9346jB7-VMcKiLsqDoN";
-  var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
-  request(verificationUrl, function (error, response, body) {
-    body = JSON.parse(body);
-    if (body.success !== undefined && !body.success) {
-      req.session.errorMsg = 'Failed captcha. Please try again.';
-      res.redirect("/");
-    }
-    var email = req.body.email;
-    var password = req.body.password;
-    var hash = crypto.createHash('sha256').update(password).digest('base64');
-    console.log(hash + " : ");
-    user.findOne({ where: { password: hash, email: email } }).then(function (user, err) {
-      console.log(err);
-      if (user) {
-        req.session.user_id = user.id;
-        req.session.email = email;
+  } else {
+    var secretKey = "6LcOQ14UAAAAAFJSxIgpj9346jB7-VMcKiLsqDoN";
+    var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+    request(verificationUrl, function (error, response, body) {
+      body = JSON.parse(body);
+      if (body.success !== undefined && !body.success) {
+        req.session.errorMsg = 'Failed captcha. Please try again.';
         res.redirect("/");
-      }
-      if (err) {
-        req.session.errorMsg = 'Please click on the link in the registered email and activate the account.';
-        res.redirect("/");
+      } else {
+        var email = req.body.email;
+        var password = req.body.password;
+        var hash = crypto.createHash('sha256').update(password).digest('base64');
+        user.findOne({ where: { password: hash, email: email } }).then(function (user, err) {
+          if (err) {
+            console.log(err);
+          }
+          if (user) {
+            req.session.user_id = user.id;
+            req.session.email = email;
+          } else {
+            req.session.errorMsg = 'Wrong username / password combination. Please try again.';
+          }
+          res.redirect("/");
+        });
       }
     });
-  });
+  }
 });
 
-router.post('/signup', function (req, res) {
+router.post('/signup', (req, res) => {
   var url = 'smtps://' + process.env.EMAIL_USER + ':' + process.env.EMAIL_PASS + '@' + process.env.SMTP_SERVER;
-  var transporter = nodemailer.createTransport(url);
-  console.log("email: " + req.body.email);
-  var token = Math.floor(Math.random() * 10000);
-  var mailOptions = {
-    from: 'abhinavkaul95@gmail.com', // sender address
-    to: req.body.email, // list of receivers
-    subject: 'Test mail', // Subject line
-    text: 'Hello world ?', // plaintext body
-    html: '<p>Please click on <a href="http://localhost:3000/activateEmail?email=' + req.body.email + '&token=' + token + '">this link</a> to activate your email.</p>' // html body
-  };
+  console.log("URL: " + url);
+  var id = Math.floor(Math.random() * 1000000000);
+  var user_email = req.body.email;
   var hash = crypto.createHash('sha256').update(req.body.password).digest('base64');
-  user.build({ name: req.body.name, email: req.body.email, birthday: req.body.birthday, password: hash, activated: 0, token: token }).save();
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      return console.log(error);
+  var activated = process.env.DIRECT_SIGNUP === 'true' ? 1 : 0;
+  user.build({ id: id, name: req.body.name, email: user_email, password: hash, activated: activated }).save();
+  user.findOne({ where: { email: user_email } }).then(function (user, err) {
+    if (err) {
+      console.log(err);
     }
+    if (user) {
+      req.session.errorMsg = 'Email Id already exists. Please try logging in with the email id or creating new account with new one.';
+    } else if (process.env.DIRECT_SIGNUP === 'false') {
+      console.log("Sign up using activation mail.");
+      var mailOptions = {
+        from: 'abhinavkaul95@gmail.com',
+        to: user_email,
+        subject: 'Activation email',
+        html: '<p>Please click on <a href="http://localhost:3000/activateEmail?email=' + user_email + '&token=' + id + '">this link</a> to activate your email.</p>'
+      };
+      nodemailer.createTransport(url).sendMail(mailOptions, function (error, info) {
+        if (error) {
+          return console.log(error);
+        }
+      });
+      req.session.infoMsg = 'Please click on the link in the registered email and activate the account.';
+    } else {
+      console.log("Sign up directly without activation mail.");
+      req.session.user_id = id;
+      req.session.email = user_email;
+    }
+    res.redirect("/");
   });
-  req.session.infoMsg = 'Please click on the link in the registered email and activate the account.';
-  res.redirect("/");
 });
 
-router.get('/activateEmail', function (req, res) {
+router.get('/activateEmail', (req, res) => {
   var email = req.query.email;
-  user.findOne({ where: { email: email, token: req.query.token, activated: 0 } }).then(function (user) {
+  user.findOne({ where: { email: email, id: req.query.token, activated: 0 } }).then(function (user) {
     if (user) {
       user.updateAttributes({
-        activated: 1,
-        token: ''
+        activated: 1
       });
       req.session.user_id = user.id;
       req.session.email = email;
       req.session.infoMsg = 'Account activated.';
-      res.redirect("/");
+    } else {
+      req.session.errorMsg = 'Issue while activating the email. Kindly sign up if you are not registered.';
     }
+    res.redirect("/");
   });
 });
 
