@@ -1,0 +1,29 @@
+{
+  "name": "xtexercises",
+  "version": "1.0.0",
+  "description": "This is a code repository for checking in code for XT Exercises",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/untangletech/xtexercises.git"
+  },
+  "author": "Pallavi Shukla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/untangletech/xtexercises/issues"
+  },
+  "homepage": "https://github.com/untangletech/xtexercises#readme",
+  "dependencies": {
+    "eslint": "^5.6.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-uglify": "^3.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.1",
+    "jquery": "^3.3.1"
+  }
+}
