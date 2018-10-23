@@ -1,14 +1,18 @@
-<form class="form-signin" action="/submit" method="POST">
+<form class="form-signin" action="/signin" method="POST">
     <h2 class="form-signin-heading">Already registered, then sign in</h2>
-    <label for="signin-email" class="sr-only">Email address</label>
-    <input type="email" id="signin-email" class="form-control" placeholder="Email address" required autofocus>
-    <label for="signin-password" class="sr-only">Password</label>
-    <input type="password" id="signin-password" class="form-control" placeholder="Password" required>
+    <div class="input-wrapper">
+        <input type="email" name="email" id="signin-email" class="form-control" placeholder=" " required autofocus>
+        <label for="signin-email" class="form-control-placeholder">Email address</label>
+    </div>
+    <div class="input-wrapper">
+        <input type="password" name="password" id="signin-password" class="form-control" placeholder=" " required>
+        <label for="signin-password" class="form-control-placeholder">Password</label>
+    </div>
     <div class="checkbox">
         <label>
             <input type="checkbox" value="remember-me"> Remember me
         </label>
     </div>
-    <div class="g-recaptcha" data-sitekey="6LcOQ14UAAAAAL6iuD9p9Ot1B_ckzeuzRFZJV6ui"></div>
-    <button class="btn btn-lg btn-default btn-block" type="submit">Sign in</button>
+    {{>recaptcha}}
+    <button class="btn btn-lg btn-default btn-block" name="submit" type="submit">Sign in</button>
 </form>

@@ -5,14 +5,23 @@
         <p>Whatever the mind of man can conceive and believe, it can achieve. Thoughts are things! And powerful things
             at that, when mixed with definiteness of purpose, and burning desire, can be translated into riches.</p>
     </blockquote>
+    {{#if infoMsg }}
+    <div class="alert alert-info alert-dismissible teaser">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        {{infoMsg}}
+    </div>
+    {{/if}}
     {{#if errorMsg }}
-    <div class="alert alert-danger error">{{errorMsg}}</div>
+    <div class="alert alert-danger alert-dismissible teaser">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        {{errorMsg}}
+    </div>
     {{/if}}
     <div class="forms-container row">
-        <div class="col-lg-5 col-md-5 signin-form-wrapper">{{> signInForm}}</div>
+        <div class="col-lg-5 col-md-5 form-wrapper signin-form-wrapper">{{> signInForm}}</div>
         <div class="col-lg-2 col-md-2 or-img-wrapper"><img src="/images/or-image-mobile.jpg" alt="Or" class="hidden-lg hidden-md"><img
                 src="/images/or-image.jpg" alt="Or" class="hidden-xs hidden-sm"></div>
-        <div class="col-lg-5 col-md-5 signup-form-wrapper">{{> signUpForm}}</div>
+        <div class="col-lg-5 col-md-5 form-wrapper signup-form-wrapper">{{> signUpForm}}</div>
     </div>
 </div>
 {{> footer}}
