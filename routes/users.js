@@ -3,11 +3,6 @@ var user = require('../models/user');
 var post = require('../models/post');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
-});
-
 router.get('/:id', function (req, res, next) {
   if (req.session.user_id == req.params.id) {
     user.findById(req.params.id).then(user => {

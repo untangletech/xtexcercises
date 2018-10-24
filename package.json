@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -20,7 +21,6 @@
     "mysql2": "^1.6.1",
     "nodemailer": "^4.6.8",
     "nodemon": "^1.18.4",
-    "request": "^2.88.0",
     "sequelize": "^4.39.0",
     "sequelize-cli": "^4.1.1",
     "sqlite3": "^4.0.2"
