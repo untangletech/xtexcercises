@@ -1,18 +1,25 @@
-<form class="form-signin" action="/signin" method="POST">
-    <h2 class="form-signin-heading">Already registered, then sign in</h2>
-    <div class="input-wrapper">
-        <input type="email" name="email" id="signin-email" class="form-control" placeholder=" " required autofocus>
-        <label for="signin-email" class="form-control-placeholder">Email address</label>
-    </div>
-    <div class="input-wrapper">
-        <input type="password" name="password" id="signin-password" class="form-control" placeholder=" " required>
-        <label for="signin-password" class="form-control-placeholder">Password</label>
-    </div>
-    <div class="checkbox">
-        <label>
-            <input type="checkbox" value="remember-me"> Remember me
-        </label>
-    </div>
-    {{>recaptcha}}
-    <button class="btn btn-lg btn-default btn-block" name="submit" type="submit">Sign in</button>
-</form>
+<div class="c-form">
+    <h2 class="c-form__heading">Sign in using <span class="c-form__social-bar"><a href="javascript:void(0)"><i class="icon icon-fb"></i></a><a
+                href="javascript:void(0)"><i class="icon icon-gp"></i></a></span>
+        or
+        directly </h2>
+    <form class="c-form__signin" action="/signin" method="POST">
+        <div class="c-form__input">
+            <input type="email" name="email" id="signin-email" class="form-control c-form__field" placeholder=" "
+                required autofocus autocomplete="on">
+            <label for="signin-email" class="c-form__field__placeholder">Email address</label>
+        </div>
+        <div class="c-form__input">
+            <input type="password" name="password" id="signin-password" class="form-control c-form__field" placeholder=" "
+                required autocomplete="on">
+            <label for="signin-password" class="c-form__field__placeholder">Password</label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        {{>recaptcha}}
+        <button class="btn btn-lg btn-default btn-block c-form__field" name="submit" type="submit">Sign in</button>
+    </form>
+</div>

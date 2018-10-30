@@ -1,0 +1,7 @@
+$list: fb gp;
+
+@each $icon in $list {
+  .icon-#{$icon} {
+    background: url("/images/icon-#{$icon}.png") no-repeat;
+  }
+}

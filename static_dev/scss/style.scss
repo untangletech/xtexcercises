@@ -1,0 +1,45 @@
+@import "global/global";
+@import "global/icons";
+@import "components/header";
+@import "components/footer";
+@import "components/forms";
+.c-main-container {
+  &__quote {
+    display: inline-block;
+    width: 72%;
+    background: url("/images/icon-opening-quote.png") top left no-repeat;
+    padding-left: 45px;
+    border: none;
+    margin: 0 2%;
+    vertical-align: middle;
+    p {
+      position: relative;
+      background: url("/images/icon-closing-quote.png") bottom right no-repeat;
+      padding-right: 40px;
+    }
+  }
+  &__forms {
+    .g-recaptcha {
+      margin-bottom: 10px;
+      & > div {
+        margin: 0 auto;
+      }
+    }
+    &__or-wrapper {
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+.c-user {
+  &__post {
+    resize: none;
+    border-radius: 10px;
+    &-button {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+}

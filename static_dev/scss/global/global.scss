@@ -1,0 +1,29 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-bottom: 60px;
+}
+
+//Default anchor tag color
+a {
+  color: #00b7ff;
+}
+
+.teaser {
+  text-align: center;
+}
+
+// Handling errors
+label.error {
+  color: #ff0000;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  display: inline-block;
+}

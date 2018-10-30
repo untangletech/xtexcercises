@@ -1,6 +1,5 @@
 {{> nav}}
-<div class="container">
-    Just watch your favourite posts by your favourites!
+<div class="container c-user js-user">
     {{#if infoMsg }}
     <div class="alert alert-info alert-dismissible teaser">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -8,6 +7,14 @@
     </div>
     {{/if}}
     <div class="row">
+        <div class="col-lg-5 col-md-5">
+            <textarea placeholder="Share your happiness..." class="form-control c-user__post js-user__post" rows="5" id="comment"></textarea>
+            <button class="btn btn-primary btn-sm c-user__post-button js-user__post-button">Post</button>
+            <ul class="c-user__stories-wrapper js-user__stories-wrapper"></ul>
+        </div>
     </div>
 </div>
+<script id="user-story" type="text/x-handlebars-template">
+    <li class="js-user__story">\{{{post}}}</li>
+</script>
 {{> footer}}

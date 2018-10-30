@@ -17,6 +17,28 @@ process.env.EMAIL_USER = encodeURIComponent("abhinavkaul95@gmail.com");
 process.env.EMAIL_PASS = "Suraj@0513";
 process.env.SMTP_SERVER = "smtp.gmail.com";
 process.env.DIRECT_SIGNUP = "true";
+
+/*var helpers = {
+  sanitize: function(options) {
+    var text = options.hash.text;
+    if (typeof text === "string") {
+      return new Handlebars.SafeString(
+        decodeURIComponent(text).replace(
+          /<script>|<script[^>]+>|<\/script>/gi,
+          ""
+        )
+      );
+    }
+    return text;
+  }
+};
+for (var helper in helpers) {
+  if (helpers.hasOwnProperty(helper)) {
+    console.log(helper + " " + helpers[helper]);
+    hbs.registerHelper(helper, helpers[helper]);
+  }
+}
+*/
 /*  
  *  Section to register hbs partials according to the files 
  *  present under the directory structure /views/partials
