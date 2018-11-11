@@ -94,7 +94,9 @@ video {
 	font: inherit;
 	vertical-align: baseline;
 }
-
+ a {
+	 text-decoration:none;
+ }
 article,
 aside,
 details,
@@ -368,19 +370,19 @@ footer {
     text-align: center; }
 
 /*highlights*/
-		.highlights {
+		.highlights ,.testimonials {
 		  padding: 8rem 0 6rem 0 ;
 		  position: relative;
 		  z-index: 1; }
 
-	.highlghts__header {
+	.highlghts__header,.testimonials__header  {
   text-align: center;
   margin-bottom: 4rem; }
   .highlghts__header p {
     max-width: 60%;
     margin-left: auto;
     margin-right: auto; }
-		.highlights__items {
+  .highlights__items,.testimonials__items {
   width: 100%;
   margin: 2.5rem 0;
   display: -moz-flex;
@@ -392,7 +394,7 @@ footer {
   -ms-align-items: -ms-stretch;
   align-items: stretch; }
   
-  .highlights__item__content{
+  .highlights__item__content,.testimonials__item__content{
 	   background: #ffffff;
 	   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.025);
 	   height:100%;
@@ -418,3 +420,61 @@ footer {
     text-transform: none !important; }
   .icon > .label {
     display: none; }
+	
+	/*Testimonials*/
+  blockquote {
+  border-left-color: grey !important; 
+  border-left: solid 0.5rem;
+  font-style: italic;
+  margin: 0 0 2rem 0;
+  padding: 1rem 0 1rem 2rem;
+  }
+  .author {
+      display: -moz-flex;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      -moz-align-items: center;
+      -webkit-align-items: center;
+      -ms-align-items: center;
+      align-items: center; 
+	  margin-left:2rem;}
+	  .author blockquote {
+        margin: 0; }
+      .author .image {
+        margin-right: 2rem;
+        width: 20%; }
+        .author .image img {
+          border-radius: 100%;
+          max-width: 100%; }
+      .credit {
+      font-size: 0.75rem; }
+	  .credit strong {
+    color: #ce1b28; }
+	
+	/* CTA */
+.cta {
+  background-color: #ce1b28;
+  color: rgba(255, 255, 255, 0.75);
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(206, 27, 40, 0.25), rgba(206, 27, 40, 0.25)), url(../../images/cta01.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  z-index: 1; }
+  
+  .cta__content {
+  padding: 8rem 0 6rem 0;
+  position: relative;
+  z-index: 1;
+  }
+  
+  .cta h1, .cta h2, .cta h3, .cta h4, .cta h5, .cta h6 {
+  color: #ffffff;
+  }
+  .cta__summary a{
+	  color:white;
+	  font-size:2rem;
+  }
