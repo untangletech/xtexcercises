@@ -14,10 +14,16 @@ gulp.task("sass2css", () => {
     .pipe(sass())
     .pipe(gulp.dest("public/stylesheets"));
 });
+gulp.task("concat-js", () => {
+  return gulp
+    .src("static_dev/js/**/*.js")
+    .pipe(concat("script.js"))
+    .pipe(gulp.dest("public/javascripts"));
+});
 gulp.task("minify-css", () => {
   return gulp
-    .src("public/stylesheets/**/*.css")
-    .pipe(minifycss({ compatibility: "ie8" }))
+    .src(["public/stylesheets/**/*.css", "!public/javascripts/**/*.min.css"])
+    .pipe(minifycss())
     .pipe(
       rename({
         suffix: ".min"
@@ -27,7 +33,7 @@ gulp.task("minify-css", () => {
 });
 gulp.task("minify-js", () => {
   return gulp
-    .src("static_dev/js/*.js")
+    .src(["public/javascripts/**/*.js", "!public/javascripts/**/*.min.js"])
     .pipe(uglify())
     .pipe(
       rename({
@@ -51,5 +57,5 @@ gulp.task("imagemin", () => {
     .pipe(imagemin())
     .pipe(gulp.dest("public/images"));
 });
-gulp.task("build-js", () => runSequence("minify-js"));
+gulp.task("build-js", () => runSequence("clean-js", "concat-js", "minify-js"));
 gulp.task("default", ["build-js", "build-css"]);

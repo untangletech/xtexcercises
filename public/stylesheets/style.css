@@ -99,14 +99,9 @@ header {
   display: block;
   margin: 0 auto; }
 
-.c-user__post-wrapper {
-  position: relative;
-  width: 40%; }
-
 .c-user__post {
   resize: none;
   border-radius: 10px; }
-
-.c-user__post-button {
-  width: 100%;
-  border-radius: 10px; }
+  .c-user__post-button {
+    width: 100%;
+    border-radius: 10px; }

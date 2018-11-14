@@ -5,7 +5,6 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var hbs = require("hbs");
 var fs = require("fs");
-
 var app = express();
 
 var session = require("express-session");
@@ -18,41 +17,26 @@ process.env.EMAIL_PASS = "Suraj@0513";
 process.env.SMTP_SERVER = "smtp.gmail.com";
 process.env.DIRECT_SIGNUP = "true";
 
-/*var helpers = {
-  sanitize: function(options) {
-    var text = options.hash.text;
-    if (typeof text === "string") {
-      return new Handlebars.SafeString(
-        decodeURIComponent(text).replace(
-          /<script>|<script[^>]+>|<\/script>/gi,
-          ""
-        )
-      );
-    }
-    return text;
-  }
-};
+var helpers = {};
 for (var helper in helpers) {
   if (helpers.hasOwnProperty(helper)) {
-    console.log(helper + " " + helpers[helper]);
     hbs.registerHelper(helper, helpers[helper]);
   }
 }
-*/
-/*  
- *  Section to register hbs partials according to the files 
+
+/*
+ *  Section to register hbs partials according to the files
  *  present under the directory structure /views/partials
  */
 var partialsDir = __dirname + "/views/partials";
 var filenames = fs.readdirSync(partialsDir);
 filenames.forEach(function(filename) {
   var matches = /^([^.]+).hbs$/.exec(filename);
-  if (!matches) {
-    return;
+  if (matches) {
+    var name = matches[1];
+    var template = fs.readFileSync(partialsDir + "/" + filename, "utf8");
+    hbs.registerPartial(name, template);
   }
-  var name = matches[1];
-  var template = fs.readFileSync(partialsDir + "/" + filename, "utf8");
-  hbs.registerPartial(name, template);
 });
 
 // view engine setup

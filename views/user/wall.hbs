@@ -8,11 +8,16 @@
     {{/if}}
     <div class="row">
         <div class="col-lg-5 col-md-5">
-            <ul class="c-user-wall__stories-wrapper js-user-wall__stories-wrapper"></ul>
+            <ul class="c-user-wall__stories-wrapper js-user-wall__stories-wrapper">
+                {{#each posts}}
+                <li>
+                    {{this.post}}
+                </li>
+                {{/each}}
+            </ul>
         </div>
     </div>
 </div>
 <script id="user-wall-story" type="text/x-handlebars-template">
     <li class="js-user-wall__story">\{{{post}}}</li>
-</script>
-{{> footer}}
+</script> {{> footer}}
