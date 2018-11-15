@@ -1,0 +1,45 @@
+.icon {
+    text-decoration: none;
+    border-bottom: none;
+    font-size: 5rem;
+    position: relative;
+    & :before {
+      @include prefix((font-smoothing:grayscale), webkit ms moz);
+      font-family: _font(family-fixed);
+      font-style: normal;
+      font-weight: normal;
+      text-transform: none !important;
+    }
+    > .label {
+      display: none;
+    }
+      }
+      blockquote {
+    border-left-color: grey !important; 
+    border-left: solid 0.5rem;
+    font-style: italic;
+    margin: 0 0 _size(element-margin) 0;
+    padding: 1rem 0 1rem 2rem;
+    }
+    .author {
+        @extend %display-flex;
+        @include prefix((align-items:center), webkit ms moz);
+          margin-left:_size(element-margin);
+      blockquote{
+        margin: 0;
+      }
+      .image {
+          margin-right: _size(element-margin);
+          width: 20%;
+        img {
+            border-radius: 100%;
+            max-width: 100%; }  
+      }
+    }
+     .credit {
+        font-size: 0.75rem; 
+        strong {
+      color: _palette(accent1,bg);
+      }
+       
+     }
