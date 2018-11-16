@@ -1,0 +1,33 @@
+footer {
+    background-color: _palette(accent2,bg);
+    color: _palette(accent2,fg);
+    padding: 4rem 0 1rem 0 ;
+    a{
+      color:_palette(accent2,fg);
+      text-decoration: none;
+      &:hover{
+        color: _palette(accent1,bg);
+      }
+    }
+    h1,h2,h3,h4,h5,h6{
+       color: _palette(accent2,fg-bold);
+    }
+    .footer__content {
+      display: -moz-flex;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      margin: 0 auto;
+      width: 75rem; 
+      section{
+         width: 25%;
+      }
+    }
+    .copyright {
+      border-top: 1px solid;
+      font-size: 0.8rem;
+      opacity: 0.5;
+      margin-top: 3rem;
+      padding: 2rem 0;
+      text-align: center; }
+  }
