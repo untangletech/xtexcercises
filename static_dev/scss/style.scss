@@ -1,8 +1,10 @@
 @import "global/global";
 @import "global/icons";
+@import "components/navbar";
 @import "components/header";
 @import "components/footer";
 @import "components/forms";
+@import "components/carousel";
 .c-main-container {
   &__quote {
     display: inline-block;

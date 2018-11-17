@@ -20,11 +20,19 @@ label.error {
   height: 36px;
   display: inline-block; }
 
+.btn-a-like {
+  padding: 0;
+  background: transparent;
+  border: 0; }
+
 .icon-fb {
   background: url("/images/icon-fb.png") no-repeat; }
 
 .icon-gp {
   background: url("/images/icon-gp.png") no-repeat; }
+
+.navbar .nav-container .navbar-text-black {
+  color: #000; }
 
 header {
   display: inline-block; }
@@ -76,6 +84,22 @@ header {
     transform: translate3d(0, -100%, 0);
     padding: 5px 0;
     opacity: 1; }
+
+.carousel {
+  height: 200px;
+  margin-bottom: 30px;
+  background-color: #777; }
+  .carousel .item {
+    height: 200px; }
+  .carousel-caption {
+    z-index: 10;
+    font-size: 24px; }
+  .carousel-inner > .item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 200px; }
 
 .c-main-container__quote {
   display: inline-block;

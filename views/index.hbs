@@ -1,17 +1,11 @@
 {{> nav}}
 <div class="container c-main-container">
-    {{> header}}
-    <blockquote class="c-main-container__quote hidden-xs">
-        <p>Whatever the mind of man can conceive and believe, it can achieve. Thoughts are things! And powerful things
-            at that, when mixed with definiteness of purpose, and burning desire, can be translated into riches.</p>
-    </blockquote>
-    {{#if infoMsg }}
+    {{> carousel}} {{#if infoMsg }}
     <div class="alert alert-info alert-dismissible teaser">
         <a href="javascript:void(0)" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         {{infoMsg}}
     </div>
-    {{/if}}
-    {{#if errorMsg }}
+    {{/if}} {{#if errorMsg }}
     <div class="alert alert-danger alert-dismissible teaser">
         <a href="javascript:void(0)" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         {{errorMsg}}
@@ -19,11 +13,13 @@
     {{/if}}
     <div class="c-main-container__forms row">
         <div class="col-lg-5 col-md-5 c-main-container__forms__form-wrapper c-main-container__forms__signin-form-wrapper">{{>
-            signInForm}}</div>
-        <div class="col-lg-2 col-md-2 c-main-container__forms__or-wrapper"><img src="/images/icon-or-m.jpg" alt="Or"
-                class="hidden-lg hidden-md"><img src="/images/icon-or-d.jpg" alt="Or" class="hidden-xs hidden-sm"></div>
+            signInForm}}
+        </div>
+        <div class="col-lg-2 col-md-2 c-main-container__forms__or-wrapper"><img src="/images/icon-or-m.jpg" alt="Or" class="hidden-lg hidden-md"><img
+                src="/images/icon-or-d.jpg" alt="Or" class="hidden-xs hidden-sm"></div>
         <div class="col-lg-5 col-md-5 c-main-container__forms__form-wrapper c-main-container__forms__signup-form-wrapper">{{>
-            signUpForm}}</div>
+            signUpForm}}
+        </div>
     </div>
 </div>
 {{> footer}}

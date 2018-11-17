@@ -48,6 +48,9 @@ gulp.task("clean-css", () => {
 gulp.task("clean-js", () => {
   return gulp.src("public/javascripts", { read: false }).pipe(clean());
 });
+gulp.task("clean-img", () => {
+  return gulp.src("public/images", { read: false }).pipe(clean());
+});
 gulp.task("build-css", () =>
   runSequence("clean-css", "sass2css", "minify-css")
 );
@@ -58,4 +61,5 @@ gulp.task("imagemin", () => {
     .pipe(gulp.dest("public/images"));
 });
 gulp.task("build-js", () => runSequence("clean-js", "concat-js", "minify-js"));
+gulp.task("build-img", () => runSequence("clean-img", "imagemin"));
 gulp.task("default", ["build-js", "build-css"]);

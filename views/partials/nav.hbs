@@ -1,29 +1,30 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"
-                aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Timeliners</a>
-        </div>
+        <div class="nav-container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand navbar-text-black" href="/">Timeliners</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a class="navbar-text-black" href="#">Link</a></li>
+                    <li><a class="navbar-text-black" href="#">Link</a></li>
+                </ul>
+                {{#if email}}
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="navbar-text-black" href="/logout"><span class="glyphicon glyphicon-off"></span></a></li>
+                    <li><a class="navbar-text-black" href="/users/{{user_id}}"><span class="glyphicon glyphicon-user"></span></a></li>
+                </ul>
+                {{/if}}
+            </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-            </ul>
-            {{#if email}}
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/logout"><span class="glyphicon glyphicon-off"></span></a></li>
-                <li><a href="/users/{{user_id}}"><span class="glyphicon glyphicon-user"></span></a></li>
-            </ul>
-            {{/if}}
         </div>
     </div>
 </nav>
