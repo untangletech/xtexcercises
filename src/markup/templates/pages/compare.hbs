@@ -1,0 +1,89 @@
+---
+title: compare
+layout: src/templates/layouts/1column.hbs
+---
+<div class="container compare-banner">
+<h3 class="helvetica semi-important-font container mt-5 mb-5 d-inline">Compare Products</h3>
+<p class="d-inline regular-font bold grey-color print-screen js-print">Print</p>
+</div>
+<table class="container mb-5 mt-5">
+   
+  <tr>
+    <td class="br-grey bold pl-3 helvetica small-font gret-color pb-4">Product</td>
+      {{#each (getDataArray site.categories.0.category site.catalog) }}
+      {{#if this.compare}}
+    <td class="pl-4">
+        <div class=" card compare-card">
+            <a href="../../../PDP.html">
+            <div class="card-img-compare">
+                    <img class="compare-img" src="../../assets/images/{{this.img}}" alt="Product1">
+            </div>
+            </a>
+            
+       <h5 class="card-title mb-2">{{this.name}}</h5>
+      <div class="d-inline-block mb-0">
+          <span aria-hidden="true" class="icon-star"></span>
+          <span aria-hidden="true" class="icon-star"></span>
+          <span aria-hidden="true" class="icon-star"></span>
+          <span aria-hidden="true" class="icon-star"></span>
+          <span aria-hidden="true" class="icon-star-outline"></span>
+        </div>
+               {{#if this.price.special}}
+        <p class="special-price-tag-plp d-inline">${{this.price.special}}.00</p>
+        {{else}}
+             <p class="price-tag-plp d-inline">${{this.price.regular}}.00</p>
+        {{/if}}
+        <div class="d-inline-block mb-4 no-print">
+      <button class="btn card-btn ml-1 mr-2">Add to Cart</button>
+      <span aria-hidden="true" class="icon-wishlist-outline pt-1"></span>
+      <span aria-hidden="true" class="icon-remove"></span>
+      </div>
+        </div>
+    </td>
+        {{/if}}
+        {{/each}}
+  </tr>
+  <tr>
+    <td class="br-grey pl-3 pt-4  bold helvetica small-font grey-color">SKU</td>
+          {{#each (getDataArray site.categories.0.category site.catalog) }}
+      {{#if this.compare}}
+      <td class="pl-4 grey-color small-font bt-grey">{{this.sku}}</td>
+    {{/if}}
+    {{/each}}
+    
+  </tr>
+  <tr>
+    <td class="br-grey pl-3 bold helvetica small-font grey-color pr-3">Description</td>
+          {{#each (getDataArray site.categories.0.category site.catalog) }}
+      {{#if this.compare}}
+      <td class="pl-4 small-font black-color">{{this.description}}</td>
+      {{/if}}
+      {{/each}}
+
+  </tr>
+  <tr>
+    <td class="br-grey bold pl-3 helvetica small-font grey-color pt-5">Short Description</td>
+        {{#each (getDataArray site.categories.0.category site.catalog) }}
+      {{#if this.compare}}
+      {{#if this.shortDescription}}
+      <td class="pl-4 small-font black-color">{{this.shortDescription}}</td>
+      {{else}}
+      <td class="pl-4 small-font black-color">N/A</td>
+      {{/if}}
+      {{/if}}
+      {{/each}}
+  </tr>
+  <tr>
+    <td class="br-grey bold pl-3 helvetica small-font grey-color pt-5">Activity</td>
+   
+       {{#each (getDataArray site.categories.0.category site.catalog) }}
+      {{#if this.compare}}
+     {{#if this.activity}}
+      <td class="pl-4 small-font black-color">{{this.activity}}</td>
+      {{else}}
+      <td class="pl-4 small-font black-color">N/A</td>
+      {{/if}}
+      {{/if}}
+      {{/each}}
+  </tr>
+</table>

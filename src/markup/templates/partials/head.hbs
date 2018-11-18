@@ -1,0 +1,17 @@
+---
+component: head
+---
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}} | {{site.title}}</title>
+
+<link rel="icon" type="image/ico" href="{{assets}}/images/favicon.ico" />
+<link rel="stylesheet" href="{{assets}}/css/vendor/slick.css" />
+<link rel="stylesheet" href="{{assets}}/css/vendor/bootstrap.min.css" />
+
+<link rel="stylesheet" href="{{assets}}/css/styles.css" />
+
+{{#each styleFiles}}
+    <link rel="stylesheet" href="{{../assets}}/css/{{this}}" />
+{{/each}}
+

@@ -1,0 +1,32 @@
+<!doctype html>
+<!--[if IE 8]><html lang="en" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="en" class="ie9"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="en"><!--<![endif]-->
+<head>
+    {{> head }}
+</head>
+<body>
+    <div class="page-wrap">
+        {{> header }}
+        <div id="mobile-wrap">
+            <div id="content" class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="sidebar col-sm-4" role="complementary">
+                            {{> left }}
+                        </div>
+                        <div class="main col-sm-4" role="main">
+                            {{> body }}
+                        </div>
+                        <div class="sidebar col-sm-4" role="complementary">
+                            {{> right }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> footer }}
+        </div>
+    </div>
+    {{> scripts}}
+</body>
+</html>

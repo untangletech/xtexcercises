@@ -1,0 +1,86 @@
+---
+title: Home 
+layout: src/templates/layouts/2column-left-plp.hbs
+---
+
+<div class="d-inline filter-bar">
+    <div class="m-2 d-inline">
+        <a href="../../../PLP.html" class="black-color">
+            <span aria-hidden="true" class="icon-list"></span>
+        </a>
+    </div>
+    <div class="m-2 d-inline">
+        <a href="../../../PLPG.html" class="black-color">
+            <span aria-hidden="true" class="icon-grid"> </span>
+        </a>
+    </div>
+    <p class="d-inline m-2">Sort</p>
+    <div class="dropdown show d-inline ">
+        <a class="btn dropdown-toggle filter-dd" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Position
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+    </div>
+    <p class="d-inline m-4"> Show</p>
+    <div class="dropdown show d-inline ">
+        <a class="btn dropdown-toggle filter-dd" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            3
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="#">1</a>
+            <a class="dropdown-item" href="#">2</a>
+            <a class="dropdown-item" href="#">3</a>
+        </div>
+    </div>
+    <p class="bread-crums d-inline m-2"> 1-3 of 12</p>
+
+</div>
+
+<hr class="mt-1">
+<div class="row">
+    {{#each (getDataArray site.categories.0.category site.catalog) }}
+    <div class="col-4">
+        <a href="../../../PDP.html">
+            <div class="card card-img-side">
+                {{#if this.ribbon}}
+                <h5 class="ribbon-{{#lowercaseFirst this.ribbon}}{{/lowercaseFirst}}">{{this.ribbon}}</h5>
+                {{/if}}
+                <img class="plp-img" src="../../assets/images/{{this.img}}" alt="Product1 ">
+
+            </div>
+        </a>
+        <h5 class="card-title mt-3 mb-1">{{this.name}}</h5>
+
+        {{#if this.price.special}}
+        <strike class="price-tag-plp d-inline">${{this.price.regular}}.00</strike>
+        <p class="special-price-tag-plp d-inline">${{this.price.special}}.00</p>
+        {{else}}
+        <p class="price-tag-plp d-inline">${{this.price.regular}}.00</p>
+        {{/if}}
+
+        <br>
+        <div class="d-block mt-0 mb-1">
+            <span aria-hidden="true" class="circle" style="background-color:{{this.colors.0.code}}"></span>
+            <span aria-hidden="true" class="circle" style="background-color:{{this.colors.1.code}}"></span>
+            <span aria-hidden="true" class="circle" style="background-color:{{this.colors.2.code}}"></span>
+            <span aria-hidden="true" class="circle" style="background-color:{{this.colors.3.code}}"></span>
+            <span aria-hidden="true" class="circle" style="background-color:{{this.colors.4.code}}"></span>
+        </div>
+        <div class="d-inline-block mb-3">
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star-outline"></span>
+        </div>
+    </div>
+    {{/each}}
+</div>
