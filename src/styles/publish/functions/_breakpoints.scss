@@ -1,3 +1,0 @@
-@function bp($val) {
-  @return map-get($breakpoints, $val);
-}
