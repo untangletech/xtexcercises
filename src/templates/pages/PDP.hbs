@@ -1,0 +1,276 @@
+---
+title: Home 
+layout: 1columnWBread.hbs
+---
+<div id="cart">
+        <div class="fixedCart" @click = 'miniCartVisible = !miniCartVisible'>
+        <div class="orangeCircle" ><p :totalAmount="totalAmount" v-text ="totalAmount" class="white-color bold cartNumber"></p></div>
+            <img class = "cart-image" src = "{{assets}}/images/cartCircle.png"/>
+    </div>
+<div class="row mb-3 main-pdp">
+    <div class="col-6 flex">
+        <div class="slider-for">
+	<div class="slider-item">
+		<img src="{{assets}}/images/CardImage2.jpg" alt="cardIMG"  draggable="false" class="top-slider"/>
+	</div>
+	<div class="slider-item">
+		<img src="{{assets}}/images/CardImage2.jpg" alt="image" draggable="false" class="top-slider"/>
+	</div>
+	<div class="slider-item">
+		<img src="{{assets}}/images/CardImage2.jpg" alt="image" draggable="false" class="top-slider"/>
+	</div>
+	<div class="slider-item">
+		<img src="{{assets}}/images/CardImage2.jpg" alt="image" draggable="false" class="top-slider"/>
+	</div>
+	<div class="slider-item">
+		<img src="{{assets}}/images/CardImage2.jpg" alt="image" draggable="false" class="top-slider"/>
+	</div>
+</div>
+<button type="button" class="slick-prev top-arrow"><img class="slider-img"src="{{assets}}/images/Group3upArrow.png"></button>
+<button type="button" class="slick-prev bottom-arrow"><img class="slider-img"src="{{assets}}/images/Group3downArrow.png"></button>
+
+<div class="slider-nav vertical-slider">
+  
+	<div class="slider-item">
+		<img src="{{assets}}/images/CardImage2.jpg" alt="image"  draggable="false" class="nav-slider"/>
+	</div>
+	<div class="slider-item">
+		<img src="{{assets}}/images/CardImage2.jpg" alt="image" draggable="false"class="nav-slider"/>
+	</div>
+	<div class="slider-item">
+		<img src="{{assets}}/images/CardImage2.jpg" alt="image" draggable="false"class="nav-slider"/>
+	</div>
+	<div class="slider-item">
+		<img src="{{assets}}/images/CardImage2.jpg" alt="image" draggable="false"class="nav-slider"/>
+	</div>
+	<div class="slider-item">
+		<img src="{{assets}}/images/CardImage2.jpg" alt="image" draggable="false"class="nav-slider"/>
+	</div>
+</div>
+    </div>
+    <div class="col-6">
+        <div class="ml-4">
+        <h3>{{site.catalog.0.name}}</h3>
+
+            <p class="grey-color d-inline mt-2 mr-2 mb-2">SKU: {{site.catalog.0.name}}</p>
+            <p class="grey-color d-inline m-2">Availability: {{#if site.catalog.0.qty}}In Stock{{/if}} </p>
+            <br>
+        <div class="d-inline-block mt-3 mr-3 mb-3">
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star-outline"></span>
+            </div>
+        <p class="d-inline bold js-go-to-review">{{site.catalog.0.number-of-ratings}} Reviews  |  Write a Review</p>
+        <br>
+        {{#if site.catalog.0.price.special}}
+        <strike class="price-tag d-inline">${{site.catalog.0.price.regular}}.00</strike>
+        <p class="special-price-tag d-inline">${{site.catalog.0.price.special}}.00</p>
+        {{/if}}
+        <br>
+         <input type="number" name="qty" class="d-inline qty-input" placeholder="qty.">
+         <add-to-cart name="{{site.catalog.0.name}}" price ="{{site.catalog.0.price.regular}}" image = "../../assets/images/{{site.catalog.0.img}}" @add = "newItem"></add-to-cart>
+        <br>
+        <button type="submit" class="btn checkout-btn">Checkout with PayPal</button>
+        <hr>
+        <div class="d-inline">
+            <div class="m-3 d-inline">
+            <span aria-hidden="true" class="icon-wishlist-outline"></span>
+            <p class="d-inline">Wishlist</p>
+            </div>
+            <div class="m-3 d-inline">
+            <span aria-hidden="true" class="icon-compare"></span>
+            <p class="d-inline">Compare</p>
+            </div>
+            <div class="m-3 d-inline">
+            <span aria-hidden="true" class="icon-email"></span>
+               <p class="d-inline">Email</p>
+               </div>
+        </div>
+         
+    </div>
+    </div>
+</div>
+<div class="info-section">
+    <div class="col-6">
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item pdp-li p-0 d-inline col-4">
+        <a class="pdp-tab active" data-toggle="tab" href="#detail" role="tab" aria-controls="menu" aria-selected="true">DETAILS</a>
+    </li>
+    <li class="nav-item pdp-li p-0 d-inline col-4">
+        <a class="pdp-tab"  data-toggle="tab" href="#moreInfo" role="tab" aria-controls="account" aria-selected="false">MORE INFO</a>
+    </li>
+    <li class="nav-item pdp-li p-0 d-inline col-4">
+        <a class=" pdp-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="account" aria-selected="false">REVIEWS</a>
+    </li>
+</ul>
+</div>
+<div class="col-12">
+ <div class="tab-content tab-content-pdp" id="myTabContent">
+    <div class="navbar-navinfo-content tab-pane show active container" id="detail" role="tabpanel" aria-labelledby="home-tab">
+       <h3>Detail</h3>
+        <ul>
+           <li>Lorem ipsdunt ut labore et quis nostrud exercit ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit </li>
+           <li>Lorem ipsdunt ut labore et quis nostrud exercit ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit </li> 
+           <li>Lorem ipsdunt ut labore et quis nostrud exercit ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit </li>  
+        </ul> 
+        </div>
+<div class="navbar-nav info-content tab-pane container" id="moreInfo" role="tabpanel" aria-labelledby="home-tab">
+       <h3 class="m-3"> More Info</h3>
+        <ul>
+           <li>Lorem ipsdunt ut labore et quis nostrud exercit ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit </li>
+           <li>Lorem ipsdunt ut labore et quis nostrud exercit ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit </li> 
+           <li>Lorem ipsdunt ut labore et quis nostrud exercit ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit </li>  
+        </ul> 
+        </div>
+<div class="navbar-nav info-content tab-pane container" id="reviews" role="tabpanel" aria-labelledby="home-tab">
+      <h3 class="ml-4 mb-3 mt-4"><span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star-outline"></span> Reviews</h3>
+        <ul>
+           <li> <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star-outline"></span>
+            <br>
+               Lorem ipsdunt ut labore et quis nostrud exercit ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit </li>
+           <li>
+                <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star-outline"></span>
+            <br>
+            Lorem ipsdunt ut labore et quis nostrud exercit ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit </li> 
+           <li>
+                <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star"></span>
+            <span aria-hidden="true" class="icon-star-outline"></span>
+            <br>
+            Lorem ipsdunt ut labore et quis nostrud exercit ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit </li>  
+        </ul> 
+        <hr class="mt-4">
+       <h5 class="mt-5 mb-3 ml-2" id="review-form">Write a Review</h5>
+     <div class="row mb-4 ml-2">
+    <form class="col-7 col-md-5 contact-form">
+        <label class="sr-only">name input</label>
+        <div class="form-group">
+            <input type="text" name="nickname" class="form-control contact name" id="exampleFormControlInput1" placeholder="Nickname">
+        </div>
+        <div class="name-comment"><span class=""></span></div>
+        <label class="sr-only">email input</label>
+        <div class="form-group">
+            <input type="email" name="title"class="form-control contact email" id="exampleFormControlInput2" placeholder="Review Title">
+        </div>
+        <div class=" email-comment"><span class=""></span> </div>
+        <label class="sr-only">comment input</label>
+        <div class="form-group">
+            <textarea class="form-control contact required comment" id="exampleFormControlTextarea1" rows="3" placeholder="Review"></textarea>
+        </div>
+        <button type="submit" class="btn submit-btn">Submit</button>
+    </form>
+        </div>
+    <ul class="js-account-content account-content tab-pane list-unstyled" role="tabpanel" aria-labelledby="home-tab" id="account"> 
+        <li class="bold grey-color">
+            <hr>
+            My Account
+            <hr>
+        </li>
+        <li class="bold grey-color">
+            My Wish Lists (3)
+            <hr>
+        </li>
+        <li class="bold grey-color">
+            Sign Out
+            <hr>
+        </li>
+        
+    </ul>
+</div>
+</div>
+</div>
+</div>
+<div class="related-products pl-3">
+<h3>Related Products</h3>
+<div class="card-section">
+<div class="card-columns cards-desktop mb-5">
+    {{#eachUpTo (getDataArray site.categories.0.category site.catalog) 5}}
+  <div class="card">
+    <img class="card-img-top" src="../../assets/images/{{this.img}}" alt="Product 3">
+    <div class="card-body">
+      <h5 class="card-title mb-0">{{this.name}}</h5>
+      <p class="card-text mb-0">{{this.price.regular}}</p>
+      <div class="d-inline-block">
+          <span aria-hidden="true" class="icon-star"></span>
+          <span aria-hidden="true" class="icon-star"></span>
+          <span aria-hidden="true" class="icon-star"></span>
+          <span aria-hidden="true" class="icon-star"></span>
+          <span aria-hidden="true" class="icon-star-outline"></span>
+      </div>
+      <div class="d-inline-block mt-1">
+      <add-to-cart-small class='{{this.sku}}' name="{{this.name}}" price ="{{this.price.regular}}" image = "../../assets/images/{{this.img}}" @add = "newItem"></add-to-cart-small>
+      <span aria-hidden="true" class="icon-wishlist m-1 pt-1"></span>
+      <span aria-hidden="true" class="icon-compare"></span>
+      </div>
+    </div>
+  </div>
+     {{/eachUpTo}}
+</div>
+</div>
+</div>
+<hr>
+<div class="you-may-also-like pl-3">
+    <h3 class="mb-3">You May Also like</h3>
+    <div class="card-section">
+<div class="card-columns cards-desktop mb-5">
+      {{#eachUpTo (getDataArray site.categories.0.category site.catalog) 5}}
+  <div class="card">
+    <img class="card-img-top" src="../../assets/images/{{this.img}}" alt="Product 3">
+    <div class="card-body">
+      <h5 class="card-title mb-0">{{this.name}}</h5>
+      <p class="card-text mb-0">{{this.price.regular}}</p>
+      <div class="d-inline-block">
+          <span aria-hidden="true" class="icon-star"></span>
+          <span aria-hidden="true" class="icon-star"></span>
+          <span aria-hidden="true" class="icon-star"></span>
+          <span aria-hidden="true" class="icon-star"></span>
+          <span aria-hidden="true" class="icon-star-outline"></span>
+      </div>
+      <div class="d-inline-block mt-1">
+      <add-to-cart-small name="{{this.name}}" price ="{{this.price.regular}}" image = "../../assets/images/{{this.img}}" @add = "newItem"></add-to-cart-small>
+      <span aria-hidden="true" class="icon-wishlist m-1 pt-1"></span>
+      <span aria-hidden="true" class="icon-compare"></span>
+      </div>
+    </div>
+  </div>
+     {{/eachUpTo}}
+</div>
+</div>
+</div>
+    <div class="black-border mini-cart fixed-top container" v-if= "miniCartVisible">
+        <div class="pt-4 pr-4">
+            <h4 class="mini-cart-title white-color d-inline">VIEW AND EDIT CART</h4>
+            <p class="d-inline white-color d-inline ft-right" @click = 'miniCartVisible = !miniCartVisible'>X</p>
+        </div>    
+          <hr>
+          <div class="d-inline mini-cart-info-1 white-color bold":totalAmount="totalAmount" v-text ="totalAmount" ></div>
+          <div class="d-inline mini-cart-info-1 white-color bold">Items</div>
+          <div class="d-inline ft-right pr-5"> 
+              <div class="d-inline mini-cart-info-2 white-color">Card Subtotal: $</div>
+              <div class="d-inline mini-cart-info-3 white-color bold" :miniCartSubtotal= "miniCartSubtotal" v-text="miniCartSubtotal"></div>
+          </div>
+          <hr>
+            <div class="mini-cart-scroll">
+            <mini-cart-item v-for='item in miniCartArray':_name = "item.names" :_price = "item.prices" :_image = "item.images" :_qty = "item.qtys" :_obj ="item" ></mini-cart-item>
+            </div>
+           <button class="mini-cart-button-orange white-color">proceed to checkout</button>
+           <button class="mini-cart-button-grey mb-3 white-color">checkout with paypal</button>
+    </div> 
+    
+</div>

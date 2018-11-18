@@ -18,8 +18,8 @@ gulp.task('minify', function() {
  });
 
 // concatenate and uglify js files 
-gulp.task('scripts', function() {
-    gulp.src('src/scripts/**/*.js')
+gulp.task('scriptsjs', function() {
+    gulp.src('src/scripts/publish/**/*.js')
     .pipe(concat('all.js'))
     .pipe(uglify())
     .pipe(gulp.dest('dist/scripts'))
@@ -28,3 +28,24 @@ gulp.task('scripts', function() {
      }));
 });
 
+
+gulp.task('vendorjs', function () {
+    gulp.src('src/scripts/vendor/*.js')
+    .pipe(gulp.dest('dist/vendor'))
+    .pipe(browserSync.reload({
+        stream: true
+     }));
+});
+
+gulp.task('mainjs', function () {
+    gulp.src('src/scripts/main.js')
+    .pipe(gulp.dest('dist'))
+    .pipe(browserSync.reload({
+        stream: true
+     }));
+});
+
+
+gulp.task('scripts', ['vendorjs', 'mainjs', 'scriptsjs'], function(){
+    
+    });

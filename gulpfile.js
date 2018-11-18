@@ -8,7 +8,11 @@ require('./gulp-tasks/images');
 require('./gulp-tasks/watch');
 
 
-gulp.task('default', ['assemble', 'templates', 'browserSync', 'message','copyHTML', 'imagemin', 'sass', 'scripts', 'watch'], function(){
+gulp.task('default', ['assemble', 'templates', 'browserSync', 'message','copyHTML', 'imagemin', 'css', 'sass', 'scripts'], function(){
+
+});
+
+gulp.task('run', ['assemble', 'templates', 'browserSync', 'message','copyHTML', 'imagemin', 'css', 'sass', 'scripts', 'watch'], function(){
 
 });
 
