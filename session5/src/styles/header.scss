@@ -1,0 +1,23 @@
+@import "variables.scss";
+
+.header-title{
+font-size: 2rem;
+}
+.header-blue{
+    color: $color-blue;
+}
+.text-red{
+    color: $color-red;
+}
+.text-fonfamily{
+    font: $title-font;
+}
+
+.navbar-header{
+    a{
+        opacity: .7;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
