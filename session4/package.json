@@ -1,0 +1,38 @@
+{
+  "name": "session3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "gulp",
+    "server": "http-server",
+    "build": "npm run server | npm run compile"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.26.0",
+    "gulp": "^3.9.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-uglify": "^3.0.1",
+    "http-server": "^0.11.1"
+  },
+  "devDependencies": {
+    "assemble": "^0.24.3",
+    "gulp-assemble": "^0.3.3",
+    "browser-sync": "^2.26.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.1",
+    "gulp-declare": "^0.3.0",
+    "gulp-extname": "^0.2.2",
+    "gulp-handlebars": "^5.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-wrap": "^0.14.0"
+  }
+}
