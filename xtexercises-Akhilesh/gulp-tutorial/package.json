@@ -1,21 +1,35 @@
 {
-  "name": "gulp-tutorial",
+  "name": "personalwebsite",
   "version": "1.0.0",
-  "description": "sample gulp tutorial",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "gulp",
+    "server": "http-server",
+    "build": "npm run server | npm run compile"
   },
-  "author": "raman",
-  "license": "MIT",
-  "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-imagemin": "^4.1.0"
-  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.24.7",
+    "gulp": "^3.9.1",
+    "assemble": "^0.24.3",
+    "gulp-assemble": "^0.3.3",
     "gulp-concat": "^2.6.1",
+    "gulp-declare": "^0.3.0",
+    "gulp-extname": "^0.2.2",
+    "gulp-handlebars": "^5.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-wrap": "^0.14.0",
+    "gulp-imagemin": "^4.1.0",
     "gulp-sass": "^4.0.1",
-    "gulp-uglify": "^3.0.1"
+    "gulp-uglify": "^3.0.1",
+    "browser-sync": "^2.26.0"
+  },
+  "dependencies": {
+    "handlebars": "^4.0.12",
+    "http-server": "^0.11.1",
+    "jquery": "^3.3.1"
   }
 }
