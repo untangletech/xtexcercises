@@ -1,0 +1,16 @@
+.header-title {
+  font-size: 2rem; }
+
+.header-blue {
+  color: #0000ff; }
+
+.text-red {
+  color: #F44336; }
+
+.text-fonfamily {
+  font: normal 24px "Open Sans", sans-serif; }
+
+.navbar-header a {
+  opacity: .7; }
+  .navbar-header a:hover {
+    opacity: 1; }

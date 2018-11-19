@@ -1,0 +1,35 @@
+body,head{
+	padding: 0px;
+	margin: 0px;
+}
+header,footer{
+	display: block;
+}
+.header{
+	overflow: hidden;
+	padding: 20px 10px;
+	background-color: #4D4F67;
+	color: #FFF;
+
+
+}
+.header_logo{
+	font-size: 24px;
+	font-weight: bold;
+}
+.left{
+float: left;
+}
+
+.right{
+float: right;
+}
+
+.center{
+
+}
+
+.footer{
+
+}
+

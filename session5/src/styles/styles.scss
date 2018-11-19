@@ -1,0 +1,8 @@
+@import "_variables";
+@import "mixin";
+@import "header";
+
+
+p{
+    @include default_text_color($color-blue);
+}
