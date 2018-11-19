@@ -2,3 +2,21 @@
 Author: Akhilesh
 */
 /* reset */
+.header {
+    background: rgba(2, 252, 222, 0.34);
+}
+.footer {
+    padding: 2% 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    //background: url(../images/blur1.jpg)no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    //background-size: 100% 100%;
+    //background-color: rgb(56, 34, 152);
+}
+
