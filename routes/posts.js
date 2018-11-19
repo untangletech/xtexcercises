@@ -2,9 +2,18 @@ var express = require("express");
 var post = require("../models/post");
 var router = express.Router();
 
-/* GET users listing. */
-router.get("/", function(req, res, next) {
-  res.send("respond with a resource");
+router.post("/", function(req, res, next) {
+  post.all().then(posts => {
+    if (posts) {
+      res.json(
+        posts.filter(post => {
+          return post.user_id != req.session.user_id;
+        })
+      );
+    } else {
+      res.redirect("/");
+    }
+  });
 });
 
 router.post("/add", function(req, res, next) {

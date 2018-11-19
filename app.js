@@ -17,7 +17,11 @@ process.env.EMAIL_PASS = "Suraj@0513";
 process.env.SMTP_SERVER = "smtp.gmail.com";
 process.env.DIRECT_SIGNUP = "true";
 
-var helpers = {};
+var helpers = {
+  ifEquals: function(arg1, arg2, options) {
+    return arg1 == arg2 ? options.fn(this) : options.inverse(this);
+  }
+};
 for (var helper in helpers) {
   if (helpers.hasOwnProperty(helper)) {
     hbs.registerHelper(helper, helpers[helper]);

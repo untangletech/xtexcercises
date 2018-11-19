@@ -4,7 +4,8 @@ html {
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  margin-bottom: 60px; }
+  margin-bottom: 60px;
+  background-color: #efefef; }
 
 a {
   color: #00b7ff; }
@@ -88,7 +89,7 @@ header {
 .carousel {
   height: 200px;
   margin-bottom: 30px;
-  background-color: #777; }
+  background-color: #bbb; }
   .carousel .item {
     height: 200px; }
   .carousel-caption {
@@ -100,6 +101,16 @@ header {
     left: 0;
     min-width: 100%;
     height: 200px; }
+
+.c-user .c-user__stories-carousel {
+  margin: 5% auto;
+  width: 100%;
+  height: 350px; }
+  @media (min-width: 768px) {
+    .c-user .c-user__stories-carousel {
+      margin: 2% auto;
+      width: 60%;
+      height: 400px; } }
 
 .c-main-container__quote {
   display: inline-block;

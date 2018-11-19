@@ -8,13 +8,32 @@
     {{/if}}
     <div class="row">
         <div class="col-lg-5 col-md-5">
-            <ul class="c-user-wall__stories-wrapper js-user-wall__stories-wrapper">
-                {{#each posts}}
-                <li>
-                    {{this.post}}
-                </li>
-                {{/each}}
-            </ul>
+            <div id="myCarousel" class="carousel slide c-user-wall__stories-wrapper js-user-wall__stories-wrapper" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    {{#each posts}}
+                    <li data-target="#myCarousel" data-slide-to="{{@index}}" {{#ifEquals @index 0}} class="active" {{/ifEquals}}></li>
+                    {{/each}}
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    {{#each posts}}
+                    <div class="item {{#ifEquals @index 0}} active {{/ifEquals}}">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <div>{{this.post}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" aria-hidden="true">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="hidden">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" aria-hidden="true">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="hidden">Next</span>
+                </a>
+            </div>
         </div>
     </div>
 </div>

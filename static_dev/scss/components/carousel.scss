@@ -1,7 +1,7 @@
 .carousel {
   height: 200px;
   margin-bottom: 30px;
-  background-color: #777;
+  background-color: #bbb;
   .item {
     height: 200px;
   }
@@ -18,6 +18,18 @@
         min-width: 100%;
         height: 200px;
       }
+    }
+  }
+}
+.c-user {
+  .c-user__stories-carousel {
+    margin: 5% auto;
+    width: 100%;
+    height: 350px;
+    @media (min-width: 768px) {
+      margin: 2% auto;
+      width: 60%;
+      height: 400px;
     }
   }
 }

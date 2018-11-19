@@ -4,8 +4,6 @@ var post = require("../models/post");
 var router = express.Router();
 
 router.get("/:id", function(req, res, next) {
-  console.log("ses: " + req.session.user_id);
-  console.log("params: " + req.params.id);
   if (req.session.user_id == req.params.id) {
     user
       .findById(req.params.id, { include: [{ model: post, as: "posts" }] })
