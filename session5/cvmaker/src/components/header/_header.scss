@@ -1,0 +1,43 @@
+%display-flex{
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}
+header{
+   @extend %display-flex;
+    @include prefix((justify-content:space-between), webkit ms moz);
+    background:_palette(accent2, bg);
+    color: _palette(accent2, fg);
+      cursor: default;
+      height: 3.25rem;
+      left: 0;
+      line-height: 3.25rem;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10001;
+  }
+  .header__logo,
+  .nav__item a{
+       color: _palette(header-p);
+      font-size: 1rem;
+      font-weight: 400;
+      height: inherit;
+      line-height: inherit;
+      padding: 0 1.25rem;
+      text-decoration: none;
+  }
+  .header__logo{
+    color: _palette(bg);
+    font-size: 120%;
+    font-weight: bold;
+  }
+  .nav__item {
+      display: inline-block;
+      > a{
+        &:after{
+          color: _palette(bg);
+        }
+      }
+  }
