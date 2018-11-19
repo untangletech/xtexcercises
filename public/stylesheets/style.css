@@ -8,6 +8,14 @@ a {
 }
 
 .c-background-layer{
-  background-image : url(/images/welocome.png)
+  background-color: antiquewhite;
+  background-image: url(/images/intro.jpg)
+
+}
+
+.c-welcome-header{
+  background-image: url(/images/welcome.jpg);
+  font-family: cursive;
+
 
 }
