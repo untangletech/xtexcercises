@@ -1,0 +1,15 @@
+@import 'basic/var';
+@import 'basic/functions';
+@import 'basic/mixins';
+@import 'basic/default';
+@import 'basic/typography';
+@import 'basic/media';
+@import '../components/banner/banner';
+@import '../components/header/header';
+@import '../components/footer/footer';
+@import '../components/highlights/highlights';
+@import '../components/testimonials/testimonials';
+@import '../components/cta/cta';
+@import 'font-awesome.min.css';
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600');
+
