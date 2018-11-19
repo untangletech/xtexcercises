@@ -6,3 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+.c-background-layer{
+  background-image : url(/images/welocome.png)
+
+}
