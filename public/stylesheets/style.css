@@ -1,0 +1,21 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.c-background-layer{
+  background-color: antiquewhite;
+  background-image: url(/images/intro.jpg)
+
+}
+
+.c-welcome-header{
+  background-image: url(/images/welcome.jpg);
+  font-family: cursive;
+
+
+}
