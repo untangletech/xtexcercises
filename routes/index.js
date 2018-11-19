@@ -10,19 +10,6 @@ router.get('/home', function(req, res, next) {
   res.render('home', { title: 'home' });
 });
 
-/* GET default view. */
-router.get('/default', function(req, res, next) {
-  res.render('default', { title: 'default' });
-});
 
-/* GET carousel. */
-router.get('/carousel', function(req, res, next) {
-  res.render('carousel', { title: 'carousel' });
-});
-
-/* GET footer. */
-router.get('/footer', function(req, res, next) {
-  res.render('footer', { title: 'footer' });
-});
   
 module.exports = router;

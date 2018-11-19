@@ -3,11 +3,11 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.render('resume', { title: 'resum e' });
 });
 
 router.get('/add', function(req, res, next) {
   console.log("res");
-  res.send('respond with a resource');
+  res.render('index', { title: 'homepage' });
 });
 module.exports = router;
