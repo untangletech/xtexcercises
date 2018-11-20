@@ -1,0 +1,1 @@
+var sum=function(u,n){return u+n};console.log("sum: ",sum(10,15));
