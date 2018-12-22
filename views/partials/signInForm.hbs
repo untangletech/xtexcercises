@@ -1,20 +1,22 @@
 <div class="c-form">
     <h2 class="c-form__heading">Sign in using <span class="c-form__social-bar"><button class="btn-a-like"><i class="icon icon-fb"></i><span
                     class="sr-only">Click to sign in using Facebook</span></button><button class="btn-a-like"><i class="icon icon-gp"></i><span
-                    class="sr-only">Click to sign in using Google+</span></button></span>
-        <button class="btn-a-like"><span class="sr-only">Tab to sign in</span><span aria-hidden="true">or</span> directly</button>
+                    class="sr-only">Click to sign in using Google+</span></button></span> or directly
     </h2>
     <form class="c-form__signin" action="/signin" method="POST">
-        <div class="c-form__input">
-            <input type="email" name="email" id="signin-email" class="form-control c-form__field" placeholder=" " required autofocus
-                autocomplete="on">
-            <label for="signin-email" class="c-form__field__placeholder">Email address</label>
-        </div>
-        <div class="c-form__input">
-            <input type="password" name="password" id="signin-password" class="form-control c-form__field" placeholder=" " required autocomplete="on">
-            <label for="signin-password" class="c-form__field__placeholder">Password</label>
-        </div>
-        {{>recaptcha}}
-        <button class="btn btn-lg btn-default btn-block c-form__field" name="submit" type="submit">Sign in</button>
+        <fieldset>
+            <legend class="sr-only">Sign in directly</legend>
+            <div class="c-form__input">
+                <input type="email" name="email" id="signin-email" class="form-control c-form__field" placeholder=" " required autofocus
+                    autocomplete="on">
+                <label for="signin-email" class="c-form__field__placeholder">Email address</label>
+            </div>
+            <div class="c-form__input">
+                <input type="password" name="password" id="signin-password" class="form-control c-form__field" placeholder=" " required autocomplete="on">
+                <label for="signin-password" class="c-form__field__placeholder">Password</label>
+            </div>
+            {{>recaptcha}}
+            <button class="btn btn-lg btn-default btn-block c-form__field" name="submit" type="submit">Sign in</button>
+        </fieldset>
     </form>
 </div>

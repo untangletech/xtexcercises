@@ -1,0 +1,32 @@
+.c-user {
+  &__post {
+    resize: none;
+    border-radius: 10px;
+    height: 10vw;
+    word-break: break-word;
+    overflow-y: auto;
+    &-button {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+  &-wall__story,
+  &__story {
+    list-style: none;
+    padding: 0;
+    .item {
+      padding: 30px 15px;
+      margin: 20px 0 20px 15px;
+    }
+  }
+}
+.c-user__blog {
+  &-wrapper li {
+    list-style: none;
+    height: 35vh;
+    cursor: pointer;
+  }
+  &-heading {
+    margin: 10vh 0;
+  }
+}

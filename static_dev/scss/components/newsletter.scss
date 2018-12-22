@@ -1,0 +1,10 @@
+.c-newsletter-form {
+  @media (min-width: 768px) {
+    &____heading {
+      font-size: 20px;
+      letter-spacing: 2px;
+      transform: rotate(-5deg);
+      margin-top: 15px;
+    }
+  }
+}

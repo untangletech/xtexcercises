@@ -1,51 +1,65 @@
-{{> nav}}
-<div class="container c-user js-user">
-    {{#if infoMsg }}
-    <div class="alert alert-info alert-dismissible teaser">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        {{infoMsg}}
-    </div>
-    {{/if}}
-    <div class="row">
-        <div class="col-lg-5 col-md-5">
-            <textarea placeholder="Share your happiness..." class="form-control c-user__post js-user__post" rows="5" id="comment"></textarea>
+<div id="main">
+    {{> nav}}
+    <div class="container c-bg-light c-user js-user">
+        {{#if infoMsg }}
+        <div class="alert alert-info alert-dismissible teaser">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            {{infoMsg}}
+        </div>
+        {{/if}} {{#if errorMsg }}
+        <div class="alert alert-danger alert-dismissible teaser">
+            <a href="javascript:void(0)" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            {{errorMsg}}
+        </div>
+        {{/if}}
+        <div class="row">
+            <div placeholder="Share your happiness..." class="form-control c-user__post js-user__post" id="comment"></div>
             <button class="btn btn-primary btn-sm c-user__post-button js-user__post-button">Post</button>
         </div>
-    </div>
-    <div class="row">
-        <div id="c-user__stories-carousel" class="carousel slide c-user__stories-carousel" data-interval="false" data-ride="carousel">
-            <ol class="carousel-indicators">
-            </ol>
-            <div class="carousel-inner c-user__stories-wrapper js-user__stories-wrapper" role="listbox">
+        <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h2 class="center-align beauty">Post here</h2>
+                    </div>
+                    <div class="modal-body" id="postModalText">
+                        <div class="c-modal-user__post-wrapper">
+                            <input class="form-control c-modal-user__post-heading js-modal-user__post-heading" placeholder="Heading" />
+                            <textarea placeholder="Share your happiness..." class="form-control c-modal-user__post js-modal-user__post" id="comment"></textarea>
+                            <button class="btn btn-primary btn-sm c-modal-user__post-button js-modal-user__post-button">Preview</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a class="left carousel-control" href="#c-user__stories-carousel" role="button" data-slide="prev" aria-hidden="true">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="hidden">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#c-user__stories-carousel" role="button" data-slide="next" aria-hidden="true">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="hidden">Next</span>
-            </a>
+        </div>
+        <h2 class="beauty center-align c-user__blog-heading">The blogs you might watch out for:</h2>
+        <div class="js-user__blog-wrapper c-user__blog-wrapper">
+            <ul class="row">
+            </ul>
         </div>
     </div>
+    <div class="modal fade" id="postSuccessModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body" id="postSuccessModalText">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="fullBlogModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body" id="fullBlogModalText">
+                </div>
+            </div>
+        </div>
+    </div>
+    {{> footer}}
 </div>
-<div class="modal fade" id="postSuccessModal" tabindex="-1" role="dialog" aria-labelledby="postSuccessLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body" id="postSuccessModalText">
-            </div>
-        </div>
-    </div>
-</div>
-<script id="user-story" type="text/x-handlebars-template">
-    <div class="item \{{active}}">
-        <div class="container">
-            <div class="carousel-caption">
-                <div class="js-user__story">\{{{post}}}</div>
-            </div>
-        </div>
-    </div>
-</script> {{> footer}}

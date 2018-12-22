@@ -1,24 +1,26 @@
 <div class="c-form">
-    <h2 class="c-form__heading"><button class="btn-a-like">Not still a member, then <span class="sr-only">click tab to </span>sign
-            up</button></h2>
+    <h2 class="c-form__heading">Not still a member, then sign up</h2>
     <form class="c-form__signup" action="/signup" method="POST">
-        <div class="c-form__input">
-            <input type="text" id="name" name="name" class="form-control c-form__field" placeholder=" " required autocomplete="on">
-            <label for="name" class="c-form__field__placeholder">Name</label>
-        </div>
-        <div class="c-form__input">
-            <input type="email" id="signupEmail" name="email" class="form-control c-form__field" placeholder=" " required autocomplete="on">
-            <label for="signupEmail" class="c-form__field__placeholder">Email address</label>
-        </div>
-        <div class="c-form__input">
-            <input type="password" name="password" id="signupPassword" placeholder=" " class="form-control c-form__field" required autocomplete="on">
-            <label for="signupPassword" class="c-form__field__placeholder">Password</label>
-        </div>
-        <div class="c-form__input">
-            <input type="password" name="confPassword" id="confPassword" placeholder=" " class="form-control c-form__field" required
-                autocomplete="on">
-            <label for="confPassword" class="c-form__field__placeholder">Confirm Password</label>
-        </div>
-        <button class="btn btn-lg btn-default btn-block c-form__field" name="submit" type="submit">Sign Up</button>
+        <fieldset>
+            <legend class="sr-only">Enter the following details</legend>
+            <div class="c-form__input">
+                <input type="text" id="name" name="name" class="form-control c-form__field" placeholder=" " required autocomplete="on">
+                <label for="name" class="c-form__field__placeholder">Name</label>
+            </div>
+            <div class="c-form__input">
+                <input type="email" id="signupEmail" name="email" class="form-control c-form__field" placeholder=" " required autocomplete="on">
+                <label for="signupEmail" class="c-form__field__placeholder">Email address</label>
+            </div>
+            <div class="c-form__input">
+                <input type="password" name="password" id="signupPassword" placeholder=" " class="form-control c-form__field" required autocomplete="on">
+                <label for="signupPassword" class="c-form__field__placeholder">Password</label>
+            </div>
+            <div class="c-form__input">
+                <input type="password" name="confPassword" id="confPassword" placeholder=" " class="form-control c-form__field" required
+                    autocomplete="on">
+                <label for="confPassword" class="c-form__field__placeholder">Confirm Password</label>
+            </div>
+            <button class="btn btn-lg btn-default btn-block c-form__field" name="submit" type="submit">Sign Up</button>
+        </fieldset>
     </form>
 </div>

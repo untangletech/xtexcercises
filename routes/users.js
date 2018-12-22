@@ -8,20 +8,19 @@ router.get("/:id", function(req, res, next) {
     user
       .findById(req.params.id, { include: [{ model: post, as: "posts" }] })
       .then(user => {
-        console.log(user);
-        res.render("user/wall", { email: user.email, posts: user.posts });
+        res.render("user/wall", { email: user.email, user_id: req.params.id });
       });
   } else {
     req.session.infoMsg = "Please login to continue";
-    res.redirect("/");
+    res.redirect(process.env.FORMS_URL);
   }
 });
 
-router.get("/:id/posts", function(req, res, next) {
+router.post("/:id/posts", function(req, res, next) {
   user
     .findById(req.params.id, { include: [{ model: post, as: "posts" }] })
     .then(user => {
-      res.json(user.posts);
+      res.json(user.posts.reverse());
     });
 });
 

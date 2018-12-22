@@ -1,0 +1,27 @@
+.modal {
+  .about-me-text {
+    padding: 10vh 5vw;
+    font-size: 18px;
+  }
+  .beauty-ol {
+    ol {
+      font-style: italic;
+      font-size: 24px;
+      li p {
+        padding: 8px;
+        font-style: normal;
+        font-family: Arial;
+        font-size: 13px;
+        border-left: 1px solid #999;
+      }
+    }
+  }
+  .c-modal-user {
+    &__post {
+      resize: none;
+      border-radius: 10px;
+      height: 50vh;
+      margin: 5vh 0px;
+    }
+  }
+}

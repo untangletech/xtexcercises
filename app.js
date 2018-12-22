@@ -12,10 +12,13 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var postsRouter = require("./routes/posts");
 
+process.env.PORT = "2000";
 process.env.EMAIL_USER = encodeURIComponent("abhinavkaul95@gmail.com");
 process.env.EMAIL_PASS = "Suraj@0513";
 process.env.SMTP_SERVER = "smtp.gmail.com";
 process.env.DIRECT_SIGNUP = "true";
+process.env.HOME_URL = "/";
+process.env.FORMS_URL = "/forms";
 
 var helpers = {
   ifEquals: function(arg1, arg2, options) {

@@ -3,9 +3,11 @@ html {
   min-height: 100%; }
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px monospace, "Lucida Grande", Helvetica, Arial, sans-serif;
   margin-bottom: 60px;
   background-color: #efefef; }
+  body .beauty {
+    font-family: yellowtail; }
 
 a {
   color: #00b7ff; }
@@ -26,17 +28,57 @@ label.error {
   background: transparent;
   border: 0; }
 
+.d-inline {
+  display: inline; }
+
+.d-inline-block {
+  display: inline-block; }
+
+.js-loading {
+  background-image: url(/images/loading.gif);
+  width: 180px;
+  height: 120px;
+  display: block;
+  margin: 0 auto; }
+
+.pull-right {
+  float: right;
+  clear: right; }
+
+.center-align {
+  margin: 0 auto;
+  display: block;
+  text-align: center; }
+
+.width-75 {
+  width: 75%; }
+
 .icon-fb {
   background: url("/images/icon-fb.png") no-repeat; }
 
 .icon-gp {
   background: url("/images/icon-gp.png") no-repeat; }
 
+.navbar .nav-container .navbar-action {
+  margin-right: 0;
+  float: left; }
+
 .navbar .nav-container .navbar-text-black {
-  color: #000; }
+  color: #000;
+  background: transparent;
+  border: none;
+  padding: 15px 5px;
+  font-size: 18px; }
+
+@media (min-width: 600px) {
+  .navbar .nav-container .navbar-text-black {
+    margin: 0 20px; } }
 
 header {
   display: inline-block; }
+
+.jumbotron h1 {
+  font-size: 40px; }
 
 .c-footer {
   position: absolute;
@@ -112,6 +154,77 @@ header {
       width: 60%;
       height: 400px; } }
 
+.c-action-sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #eee;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px; }
+  .c-action-sidebar a,
+  .c-action-sidebar button {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 2vw;
+    color: #888;
+    display: block;
+    transition: 0.3s;
+    font-family: elephant; }
+    .c-action-sidebar a:hover,
+    .c-action-sidebar button:hover {
+      color: #333;
+      font-size: 3vw; }
+  .c-action-sidebar__closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px; }
+  .c-action-sidebar__openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #eee;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    display: inline-block; }
+    .c-action-sidebar__openbtn:hover {
+      background-color: #ddd; }
+
+#main {
+  transition: margin-left 0.5s;
+  padding: 16px; }
+
+@media screen and (max-height: 450px) {
+  .actionSidebar {
+    padding-top: 15px; }
+    .actionSidebar a {
+      font-size: 18px; } }
+
+.modal .about-me-text {
+  padding: 10vh 5vw;
+  font-size: 18px; }
+
+.modal .beauty-ol ol {
+  font-style: italic;
+  font-size: 24px; }
+  .modal .beauty-ol ol li p {
+    padding: 8px;
+    font-style: normal;
+    font-family: Arial;
+    font-size: 13px;
+    border-left: 1px solid #999; }
+
+.modal .c-modal-user__post {
+  resize: none;
+  border-radius: 10px;
+  height: 50vh;
+  margin: 5vh 0px; }
+
 .c-main-container__quote {
   display: inline-block;
   width: 72%;
@@ -136,7 +249,33 @@ header {
 
 .c-user__post {
   resize: none;
-  border-radius: 10px; }
+  border-radius: 10px;
+  height: 10vw;
+  word-break: break-word;
+  overflow-y: auto; }
   .c-user__post-button {
     width: 100%;
     border-radius: 10px; }
+
+.c-user-wall__story, .c-user__story {
+  list-style: none;
+  padding: 0; }
+  .c-user-wall__story .item, .c-user__story .item {
+    padding: 30px 15px;
+    margin: 20px 0 20px 15px; }
+
+.c-user__blog-wrapper li {
+  list-style: none;
+  height: 35vh;
+  cursor: pointer; }
+
+.c-user__blog-heading {
+  margin: 10vh 0; }
+
+.c-user-wall__blog-wrapper li {
+  list-style: none;
+  height: 35vh;
+  cursor: pointer; }
+
+.c-user-wall__blog-heading {
+  margin: 10vh 0; }

@@ -1,0 +1,10 @@
+.c-user-wall__blog {
+  &-wrapper li {
+    list-style: none;
+    height: 35vh;
+    cursor: pointer;
+  }
+  &-heading {
+    margin: 10vh 0;
+  }
+}

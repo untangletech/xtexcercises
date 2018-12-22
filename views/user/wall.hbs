@@ -1,42 +1,32 @@
-{{> nav}}
-<div class="container c-user-wall js-user-wall">
-    {{#if infoMsg }}
-    <div class="alert alert-info alert-dismissible teaser">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        {{infoMsg}}
+<div id="main">
+    {{> nav}}
+    <div class="container c-bg-light c-user-wall js-user-wall">
+        {{#if infoMsg }}
+        <div class="alert alert-info alert-dismissible teaser">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            {{infoMsg}}
+        </div>
+        {{/if}} {{#if errorMsg }}
+        <div class="alert alert-danger alert-dismissible teaser">
+            <a href="javascript:void(0)" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            {{errorMsg}}
+        </div>
+        {{/if}}
+        <h2 class="beauty center-align c-user-wall__blog-heading">Want to feel motivated? Look at you own blogs!</h2>
+        <div class="c-user-wall__blog-wrapper js-user-wall__blog-wrapper" data-userid="{{user_id}}">
+            <ul class="row"></ul>
+        </div>
     </div>
-    {{/if}}
-    <div class="row">
-        <div class="col-lg-5 col-md-5">
-            <div id="myCarousel" class="carousel slide c-user-wall__stories-wrapper js-user-wall__stories-wrapper" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    {{#each posts}}
-                    <li data-target="#myCarousel" data-slide-to="{{@index}}" {{#ifEquals @index 0}} class="active" {{/ifEquals}}></li>
-                    {{/each}}
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                    {{#each posts}}
-                    <div class="item {{#ifEquals @index 0}} active {{/ifEquals}}">
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <div>{{this.post}}</div>
-                            </div>
-                        </div>
-                    </div>
-                    {{/each}}
+    <div class="modal fade" id="fullBlogModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
-                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" aria-hidden="true">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="hidden">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" aria-hidden="true">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="hidden">Next</span>
-                </a>
+                <div class="modal-body" id="fullBlogModalText">
+                </div>
             </div>
         </div>
     </div>
+    {{> footer}}
 </div>
-<script id="user-wall-story" type="text/x-handlebars-template">
-    <li class="js-user-wall__story">\{{{post}}}</li>
-</script> {{> footer}}
