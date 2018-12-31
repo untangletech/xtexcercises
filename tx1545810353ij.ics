@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+PRODID:-//AddEvent.com v1.0//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+NAME:Follow our calendar
+X-WR-CALNAME:Follow our calendar
+X-PUBLISHED-TTL:PT2H
+REFRESH-INTERVAL;VALUE=DURATION:PT2H
+BEGIN:VEVENT
+DTSTAMP:20180501T002025Z
+UID:eC1117796@addevent.com
+DTSTART:20181214T170000Z
+DTEND:20181214T190000Z
+SUMMARY:AddEvent.com: Multiple events / subscription calendar demo
+DESCRIPTION:This is a subscription calendar demo. Need to unsubscribe? Here's a guide: https://www.calendarx.com/faq
+X-ALT-DESC;FMTTYPE=text/html:This is a subscription calendar demo. Need to unsubscribe? Here's a guide: https://www.calendarx.com/faq
+LOCATION:San Francisco
+SEQUENCE:0
+LAST-MODIFIED:20180501T002025Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20180501T002025Z
+UID:QH1117797@addevent.com
+DTSTART:20181221T170000Z
+DTEND:20181221T190000Z
+SUMMARY:AddEvent.com: Multiple events / subscription calendar demo
+DESCRIPTION:This is a subscription calendar demo. Need to unsubscribe? Here's a guide: https://www.calendarx.com/faq
+X-ALT-DESC;FMTTYPE=text/html:This is a subscription calendar demo. Need to unsubscribe? Here's a guide: https://www.calendarx.com/faq
+LOCATION:San Francisco
+SEQUENCE:0
+LAST-MODIFIED:20180501T002025Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20180501T002025Z
+UID:on1117798@addevent.com
+DTSTART:20181228T170000Z
+DTEND:20181228T190000Z
+SUMMARY:AddEvent.com: Multiple events / subscription calendar demo
+DESCRIPTION:This is a subscription calendar demo. Need to unsubscribe? Here's a guide: https://www.calendarx.com/faq
+X-ALT-DESC;FMTTYPE=text/html:This is a subscription calendar demo. Need to unsubscribe? Here's a guide: https://www.calendarx.com/faq
+LOCATION:San Francisco
+SEQUENCE:0
+LAST-MODIFIED:20180501T002025Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
