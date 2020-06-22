@@ -1,0 +1,66 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font: 14px monospace, "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-bottom: 60px;
+  background-color: #efefef;
+  .beauty {
+    font-family: yellowtail;
+  }
+}
+
+//Default anchor tag color
+a {
+  color: #00b7ff;
+}
+
+.teaser {
+  text-align: center;
+}
+
+// Handling errors
+label.error {
+  color: #ff0000;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  display: inline-block;
+}
+
+.btn-a-like {
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+.d-inline {
+  display: inline;
+}
+.d-inline-block {
+  display: inline-block;
+}
+.js-loading {
+  background-image: url(/images/loading.gif);
+  width: 180px;
+  height: 120px;
+  display: block;
+  margin: 0 auto;
+}
+.pull-right {
+  float: right;
+  clear: right;
+}
+.center-align {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+.width-75 {
+  width: 75%;
+}

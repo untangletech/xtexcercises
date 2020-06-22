@@ -1,0 +1,29 @@
+<div>
+    <form class="c-form">
+        <fieldset>
+            <legend>Feel free to contact me using the following contact form:</legend>
+            <div class="c-form__input">
+                <input type="email" name="email" id="contact-email" class="form-control c-form__field" placeholder=" " required autofocus
+                    autocomplete="on">
+                <label for="contact-email" class="c-form__field__placeholder">Email address</label>
+            </div>
+            <div class="c-form__input">
+                <input type="password" name="password" id="contact-password" class="form-control c-form__field" placeholder=" " required
+                    autocomplete="on">
+                <label for="contact-password" class="c-form__field__placeholder">Password</label>
+            </div>
+            <div class="c-form__input form-group">
+                <label for="type">Query or feedback:</label>
+                <select class="form-control c-form__field" id="type">
+                    <option>Query</option>
+                    <option>Feedback</option>
+                </select>
+            </div>
+            <div class="c-form__input form-group">
+                <label for="description">Please write here:</label>
+                <textarea class="form-control" rows="5" id="description"></textarea>
+            </div>
+            <button class="btn btn-lg btn-default btn-block c-form__field" name="submit" type="submit">Submit</button>
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+@import "global/colors";
+.navbar {
+  .nav-container {
+    .navbar-action {
+      margin-right: 0;
+      float: left;
+    }
+    .navbar-text-black {
+      color: $black;
+      background: transparent;
+      border: none;
+      padding: 15px 5px;
+      font-size: 18px;
+    }
+    @media (min-width: 600px) {
+      .navbar-text-black {
+        margin: 0 20px;
+      }
+    }
+  }
+}

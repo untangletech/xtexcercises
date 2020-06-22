@@ -1,0 +1,36 @@
+.c-form {
+  .checkbox input[type="checkbox"] {
+    margin: 0;
+    left: 0;
+  }
+  &__social-bar {
+    vertical-align: middle;
+  }
+  &__input {
+    position: relative;
+  }
+  &__field {
+    margin: 25px 0 10px;
+    &__placeholder {
+      display: block;
+      position: absolute;
+      top: 0;
+      padding: 9px 0 0 13px;
+      -webkit-transition: all 200ms;
+      -moz-transition: all 200ms;
+      -o-transition: all 200ms;
+      transition: all 200ms;
+      opacity: 0.5;
+    }
+    &:focus ~ &__placeholder,
+    &:valid ~ &__placeholder,
+    &:not(:placeholder-shown) ~ &__placeholder {
+      -webkit-transform: translate3d(0, -100%, 0);
+      -moz-transform: translate3d(0, -100%, 0);
+      -o-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+      padding: 5px 0;
+      opacity: 1;
+    }
+  }
+}

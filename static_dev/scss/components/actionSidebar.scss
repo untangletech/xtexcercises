@@ -1,0 +1,58 @@
+.c-action-sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #eee;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  a,
+  button {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 2vw;
+    color: #888;
+    display: block;
+    transition: 0.3s;
+    font-family: elephant;
+    &:hover {
+      color: #333;
+      font-size: 3vw;
+    }
+  }
+  &__closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  &__openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #eee;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    display: inline-block;
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+}
+
+#main {
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+@media screen and (max-height: 450px) {
+  .actionSidebar {
+    padding-top: 15px;
+    a {
+      font-size: 18px;
+    }
+  }
+}

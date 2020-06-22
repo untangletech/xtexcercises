@@ -1,0 +1,30 @@
+<div id="main">
+    {{> nav}}
+    <div class="container c-main-container c-bg-light">
+        <div class="width-75 center-align">
+            <h1 class="beauty">Want your blog to get noticed! Show the world what is up your sleeve.</h1>
+        </div>
+        {{#if infoMsg }}
+        <div class="alert alert-info alert-dismissible teaser">
+            <a href="javascript:void(0)" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            {{infoMsg}}
+        </div>
+        {{/if}} {{#if errorMsg }}
+        <div class="alert alert-danger alert-dismissible teaser">
+            <a href="javascript:void(0)" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            {{errorMsg}}
+        </div>
+        {{/if}}
+        <div class="c-main-container__forms row">
+            <div class="col-lg-5 col-md-5 c-main-container__forms__form-wrapper c-main-container__forms__signin-form-wrapper">{{>
+                signInForm}}
+            </div>
+            <div class="col-lg-2 col-md-2 c-main-container__forms__or-wrapper"><img src="/images/icon-or-m.jpg" alt="Or"
+                    class="hidden-lg hidden-md"><img src="/images/icon-or-d.jpg" alt="Or" class="hidden-xs hidden-sm"></div>
+            <div class="col-lg-5 col-md-5 c-main-container__forms__form-wrapper c-main-container__forms__signup-form-wrapper">{{>
+                signUpForm}}
+            </div>
+        </div>
+    </div>
+    {{> footer}}
+</div>
